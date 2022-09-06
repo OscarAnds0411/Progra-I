@@ -11,11 +11,11 @@ distancia y tiempo. */
 #include<conio.h>  
 
 int main(){
-    int d,t;
+    float d,t;
     printf("Programa 3 velocidad de un movil\n");
     printf("Ingrese la distancia recorrida en Km;\n");
-    scanf("%d", &d);
+    scanf("%f", &d);
     printf("Ingrese el tiempo tomado en h;\n");
-    scanf("%d", &t);
-    printf("La velocidad del móvil en Km/h es: %d\n", d/t);
+    scanf("%f", &t);
+    printf("La velocidad del movil en Km/h es: %f\n", d/t);
 }

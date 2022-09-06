@@ -13,10 +13,10 @@ a Farenheit. El usuario ingresa los datos de la temperatura en Centígrados. */
 int main(){
     float pf,pd,po;
     printf("Programa 8 IVA\n");
-    printf("Ingrese el costo inicial;\n");
+    printf("Ingrese el costo inicial en pesos mexicanos;\n");
     scanf("%f", &po);
     pf=po*0.92;
     pd=0.8*po;
-    printf("El costo con descuento es: %f\n", pd);
-    printf("El costo total a pagar es: %f\n", pf);
+    printf("El costo con descuento en pesos mexicanos es: %f\n", pd);
+    printf("El costo total a pagar en pesos mexicanos es: %f\n", pf);
 }

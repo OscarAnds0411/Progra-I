@@ -10,10 +10,10 @@
 
 int main(){
     int a,b, suma;
-    printf("Programa 1 Suma de dos números\n");
-    printf("Ingrese el primer número;\n");
+    printf("Programa 1 Suma de dos numeros\n");
+    printf("Ingrese el primer numero;\n");
     scanf("%d", &a);
-    printf("Ingrese el segundo número;\n");
+    printf("Ingrese el segundo numero;\n");
     scanf("%d", &b);
    // suma=a+b;
     printf("El resultado de la suma es: %d\n", a+b);

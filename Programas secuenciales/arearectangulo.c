@@ -15,5 +15,5 @@ int main(){
     scanf("%d", &b);
     printf("Ingrese la altura del rectangulo;\n");
     scanf("%d", &h);
-    printf("El area del rectangulo es: %d\n", b*h);
+    printf("El area del rectangulo en u^2 es: %d\n", b*h);
 }
