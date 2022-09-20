@@ -37,7 +37,7 @@ int main(){
         printf("ERROR\nno existen las distancias negativas\n");
     }else {
         if (triangular(a,b,c) ==1){
-            printf("Desee la opcion que desea calcular de un triangulo\nperimetro (p) o area (a)\n");
+            printf("Ingrese la opcion que desea calcular de un triangulo\nperimetro (p) o area (a)\n");
             scanf(" %c", &opc);
             if (opc == 'p' || opc == 'P'){
                 printf("El perimetro del triangulo es: %f\n", a+b+c);
