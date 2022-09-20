@@ -24,18 +24,21 @@ int main(){
 
     
     if (discriminant > 0) {
+        printf("El polinomio tiene 2 raices reales:\n");
         root1 = (-b + sqrt(discriminant)) / (2 * a);
         root2 = (-b - sqrt(discriminant)) / (2 * a);
         printf("root1 = %.2lf y root2 = %.2lf", root1, root2);
     }
 
     else if (discriminant == 0) {
+        printf("El polinomio tiene 1 raiz real:\n");
         root1 = root2 = -b / (2 * a);
         printf("root1 = root2 = %.2lf;", root1);
     }
 
     
     else {
+        printf("El polinomio tiene 2 raices complejas:\n");
         realPart = -b / (2 * a);
         imagPart = sqrt(-discriminant) / (2 * a);
         printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
