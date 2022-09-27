@@ -15,12 +15,12 @@ mensaje de error y terminar el programa.
 
 int main(){
     float g=9.81, m;
-    printf("Programa 2 peso de una persona en la tierra\n");
-    printf("Considere la constante g en m/s^2 como: %f\n", g);
-    printf("Ingrese la masa de la persona en Kg;\n");
+    printf("Programa 2: Calcular el peso de una persona en la tierra\n");
+    printf("Considere la constante g=%.2f m/s^2\n", g);
+    printf("Ingrese la masa de la persona en kg;\n");
     scanf("%f", &m);
     if (m<0){
         printf("Error\nLa masa negativa carece de sentido\n");
     } else
-        printf("El peso de una persona en N es: %f\n", g*m);
+        printf("El peso de una persona en %.3f N \n", g*m);
 }

@@ -1,53 +1,46 @@
 /*
         Programación I
-    Programa 6 horas trabajadas
+    Programa 6 raices grado 2
     Oscar Andrés Valencia Magaña
     19/09/2022
 */
 /*
-6. Realice el diagrama de flujo y programa que permita determinar el sueldo quincenal
-de un trabajador con base en las horas trabajadas y el pago por hora, considerando
-que a partir de la hora número 41 y hasta la 45, cada hora se le paga el doble, de la
-hora 46 a la 50, el triple, y que trabajar más de 50 horas no está permitido. El usuario
-deberá ingresar el nombre del trabajador, su salario por hora y el número de horas
-laboradas. Al final se debe mostrar el nombre del trabajador, las horas laboradas y el
-pago quincenal.
+Realizar el diagrama de flujo y programa que calcule la solución de una ecuación
+cuadrático del tipo 𝑎𝑥^2 + 𝑏𝑥 + 𝑐 = 0. El usuario deberá ingresar los coeficientes a, b y
+c. Al final deberá mostrar si tiene raíces reales o complejas, así como mostrar el valor
+de las raíces resueltas.
 */
+#include <math.h>
 #include <stdio.h>
-#include<conio.h>  
-#include<math.h>  
-#include<string.h>  
 
 int main(){
-    int ht;
-    float pph;
-    char nombre[30];
+    double a, b, c, discriminant, root1, root2, realPart, imagPart;
     
-    printf("Programa 6 sistema quincenal\n");
-    printf("Bienvenido, favor de ingresar su nombre;\n");
-    scanf(" %s", nombre);
-   if (strlen(nombre)==0){
-        printf("ERROR\nFavor de ingresar un nombre\n");
-   }else{
-        printf("Ingrese el precio en pesos mexicanos por hora;\n");
-        scanf(" %f", &pph);
-        if (pph<0){
-            printf("ERROR\nFavor de ingresar algo coherente\n");
-        } else{
-            printf("Ingrese las horas trabajadas en la quincena;\n");
-            scanf(" %d", &ht);
-            if (ht<0){
-                printf("ERROR\nFavor de ingresar algo coherente\n");
-            } else if (ht<41){
-                printf("%s ha trabajado %d horas, lo que le da un sueldo de: %f\n pesos", nombre, ht ,pph*ht);
-            } else if(ht >= 41 && ht<=45){
-                printf("%s ha trabajado %d horas, lo que le da un sueldo de: %f pesos\n", nombre, ht ,(2*pph*ht));
-            } else if(ht>=46 && ht <= 50){
-                printf("%s ha trabajado %d horas, lo que le da un sueldo de: %f\n pesos", nombre, ht ,(3*pph*ht));
-            } else{
-                printf("ERROR\nNo se puede laborar mas de 50 horas a la quincena\n");
+    
+    printf("Programa 7: cálculo de raices del polinomio de grado 2\n");
+    printf("Ingrese los coeficientes a, b y c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+    discriminant = b * b - 4 * a * c;
 
-            }
-        }
-   }  
+    
+    if (discriminant > 0) {
+        printf("El polinomio tiene 2 raices reales:\n");
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        printf("root1 = %.2lf y root2 = %.2lf", root1, root2);
+    }
+
+    else if (discriminant == 0) {
+        printf("El polinomio tiene 1 raiz real:\n");
+        root1 = root2 = -b / (2 * a);
+        printf("root1 = root2 = %.2lf;", root1);
+    }
+
+    
+    else {
+        printf("El polinomio tiene 2 raices complejas:\n");
+        realPart = -b / (2 * a);
+        imagPart = sqrt(-discriminant) / (2 * a);
+        printf("root1 = %.2lf+%.2lfi and root2 = %.2f-%.2fi", realPart, imagPart, realPart, imagPart);
+    }
 }

@@ -14,14 +14,14 @@ de error y termina el programa.
 #include<conio.h>  
 
 int main(){
-    int h,b;
-    printf("Programa 1 Area de un rectangulo\n");
+    float h,b;
+    printf("Programa 1: Calcular el area de un rectangulo\n");
     printf("Ingrese la base del rectangulo;\n");
-    scanf("%d", &b);
+    scanf("%f", &b);
     printf("Ingrese la altura del rectangulo;\n");
-    scanf("%d", &h);
+    scanf("%f", &h);
     if (h<0 || b<0){
         printf("ERROR\n no existen las distancias negativas\n");
     } else
-        printf("El area del rectangulo en u^2 es: %d\n", b*h);
+        printf("El area del rectangulo %.3f u^2\n", b*h);
 }

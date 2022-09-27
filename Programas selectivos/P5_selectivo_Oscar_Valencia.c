@@ -1,60 +1,53 @@
 /*
         Programación I
-    Programa 5 tiempo vivido
+    Programa 5 horas trabajadas
     Oscar Andrés Valencia Magaña
     19/09/2022
 */
 /*
-5. Realice el diagrama de flujo y programa que representen el algoritmo para determinar
-cuántos meses, semanas y días ha vivido una persona según su fecha de nacimiento
-con respecto a la fecha que se corra el programa. El usuario deberá ingresar su fecha
-de nacimiento en modo numérico. Deberá revisar que los números correspondan a
-los días meses y año. De lo contrario, mostrará error.
+6. Realice el diagrama de flujo y programa que permita determinar el sueldo quincenal
+de un trabajador con base en las horas trabajadas y el pago por hora, considerando
+que a partir de la hora número 41 y hasta la 45, cada hora se le paga el doble, de la
+hora 46 a la 50, el triple, y que trabajar más de 50 horas no está permitido. El usuario
+deberá ingresar el nombre del trabajador, su salario por hora y el número de horas
+laboradas. Al final se debe mostrar el nombre del trabajador, las horas laboradas y el
+pago quincenal.
 */
 #include <stdio.h>
 #include<conio.h>  
 #include<math.h>  
-#include<time.h>  
+#include<string.h>  
 
 int main(){
-    time_t inicio = time(NULL);
-    printf("Inicio: %llu\n", inicio);
-    printf("Como fecha: ");
-    imprimirFechaAPartirDeTimestamp(inicio);
-    printf("\n");
-    printf("Presiona Enter cuando quieras\n");
-    // Esperar a que el usuario presione Enter. Realmente esta espera podría ser cualquiera
-    // y podría ser en cualquier circunstancia
-    getchar();
-    time_t fin = time(NULL);
-    printf("Fin: %llu\n", fin);
-    printf("Como fecha: ");
-    imprimirFechaAPartirDeTimestamp(fin);
-    printf("\n");
-    time_t diferencia = fin - inicio;
-    imprimir_d
-    iferencia(diferencia);
-    return 0;
-}
+    int ht;
+    float pph;
+    char nombre[30];
+    
+    printf("Programa 5: Sistema de pago quincenal\n");
+    printf("Bienvenido, favor de ingresar su nombre;\n");
+    scanf(" %s", nombre);
+   if (strlen(nombre)==0){
+        printf("ERROR\nFavor de ingresar un nombre\n");
+   }else{
+        printf("Ingrese el precio en pesos mexicanos por hora;\n");
+        scanf(" %f", &pph);
+        if (pph<0){
+            printf("ERROR\nFavor de ingresar algo coherente\n");
+        } else{
+            printf("Ingrese las horas trabajadas en la quincena;\n");
+            scanf(" %d", &ht);
+            if (ht<0){
+                printf("ERROR\nFavor de ingresar algo coherente\n");
+            } else if (ht<41){
+                printf("%s ha trabajado %d horas, lo que le da un sueldo de: %.2f\n pesos", nombre, ht ,pph*ht);
+            } else if(ht >= 41 && ht<=45){
+                printf("%s ha trabajado %d horas, lo que le da un sueldo de: %.2f pesos\n", nombre, ht ,(2*pph*ht));
+            } else if(ht>=46 && ht <= 50){
+                printf("%s ha trabajado %d horas, lo que le da un sueldo de: %.2f\n pesos", nombre, ht ,(3*pph*ht));
+            } else{
+                printf("ERROR\nNo se puede laborar mas de 50 horas a la quincena\n");
 
-    //printf("Programa 5 tiempo vivido\n");
-
-void imprimir_diferencia(time_t diferencia)
-{
-    unsigned long long int horas = diferencia / 60 / 60;
-    diferencia -= 60 * 60 * horas;
-    unsigned long long int minutos = diferencia / 60;
-    diferencia -= 60 * minutos;
-    printf("%llu hora(s) %llu minuto(s) %llu segundo(s)\n", horas, minutos, diferencia);
-}
-
-void imprimirFechaAPartirDeTimestamp(time_t tiempo)
-{
-    struct tm *tm = localtime(&tiempo);
-    printf("%02d/%02d/%02d %02d:%02d:%02d",
-           tm->tm_mday, tm->tm_mon + 1,
-           tm->tm_year + 1900,
-           tm->tm_hour,
-           tm->tm_min,
-           tm->tm_sec);
+            }
+        }
+   }  
 }
