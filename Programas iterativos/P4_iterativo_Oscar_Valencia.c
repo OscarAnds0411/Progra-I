@@ -1,6 +1,6 @@
 /*
         Programación I
-    Programa 1 numeros pares
+    Programa 4 factorial
     Oscar Andrés Valencia Magaña
     15/09/2022
 */
@@ -15,11 +15,26 @@ realizar otro cálculo o terminar el programa
 #include<conio.h>  
 
 int main(){
-    int i;
-   for (i=0; 2*i+1<=10000; i++){
-        printf("%d\t", 2*i+1);
-        if (i != 0 && i%100 == 0){
-            printf("\n%d numeros impares\n", i);
+    int i, n, fact=1;
+    char opc = 's';
+    while (opc == 's' || opc == 'S'){    
+        fact = 1;
+        printf("Programa 4\t Calculo de un factorial\n");
+        printf("Favor de ingresar el numero que desea sacar el factorial:\n");
+        scanf("%d", &n);
+        if (n<=0){
+            printf("ERROR\tfavor de ingresar un numero entero positivo\n");
+        } else if(n >= 0 && n <= 20){
+            for (i = 1; i <= n; i++){
+                fact = fact * i;
+            }
+            printf("El factorial de %d es: %d\n", n, fact);
+        } else{
+            printf("ERROR\t favor de ingresar un numero mas pequen'o\n");
         }
-   }
+        printf("Desea volver a usar el programa? (S/N)\n");
+        scanf(" %c", &opc);
+        system("pause");
+        system("cls");
+    }
 }

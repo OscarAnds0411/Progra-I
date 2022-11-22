@@ -11,15 +11,20 @@ todos los valores de la serie generada. Además el usuario podrá
 seleccionar que también se muestre el valor “n-ésimo” entre los
 primeros 100 valores de la serie. 
 */
-#include <stdio.h>
-#include<conio.h>  
+#include<stdio.h>    
 
-int main(){
-    int i;
-   for (i=0; 2*i+1<=10000; i++){
-        printf("%d\t", 2*i+1);
-        if (i != 0 && i%100 == 0){
-            printf("\n%d numeros impares\n", i);
-        }
-   }
-}
+int main()    
+{    
+ int n1=0,n2=1,n3,i,number=10;    
+ //printf("Enter the number of elements:");    
+ //scanf("%d",&number);    
+ printf("\n %d\t %d\t",n1,n2);//printing 0 and 1    
+ for(i=2;i<number;++i)//loop starts from 2 because 0 and 1 are already printed    
+ {    
+  n3=n1+n2;    
+  printf(" %d\t",n3);    
+  n1=n2;    
+  n2=n3;    
+ }  
+  return 0;  
+ }   

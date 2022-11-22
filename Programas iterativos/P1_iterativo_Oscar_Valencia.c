@@ -11,13 +11,17 @@ pausar y continuar el programa hasta terminar.
 */
 #include <stdio.h>
 #include<conio.h>  
+#include<windows.h>
+
 
 int main(){
     int i;
+    printf("Programa 1:\t desplegar los numeros impares entre 1 y 10000\n");
    for (i=0; 2*i+1<=10000; i++){
         printf("%d\t", 2*i+1);
         if (i != 0 && i%100 == 0){
             printf("\n%d numeros impares\n", i);
+            sleep(2);
         }
    }
 }

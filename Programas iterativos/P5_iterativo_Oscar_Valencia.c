@@ -1,6 +1,6 @@
 /*
         Programación I
-    Programa 1 numeros pares
+    Programa 5 serie 
     Oscar Andrés Valencia Magaña
     15/09/2022
 */
@@ -14,11 +14,17 @@ introducir por el teclado.
 #include<conio.h>  
 
 int main(){
-    int i;
-   for (i=0; 2*i+1<=10000; i++){
-        printf("%d\t", 2*i+1);
-        if (i != 0 && i%100 == 0){
-            printf("\n%d numeros impares\n", i);
+    int i, n;
+    float psum = 0;
+    printf("Programa 5: Hallar la suma parcial de una serie\n");
+    printf("De la serie sum_{n}^{i=1} (1/i), ingrese hasta que termino desea calcular:\n");
+    scanf("%d", &n);
+    if (n<=0){
+        printf("ERROR\t Favor de ingresar un numero mayor a 0\n");
+    } else{
+        for (i = 1; i <= n; i++){
+            psum=psum+((float)1/(float)i);
         }
-   }
+        printf("La suma parcial de la serie es: %f\n", psum);
+    }
 }
