@@ -1,6 +1,6 @@
 /*
         Programación I
-    Programa 1 numeros pares
+    Programa 9 serie de fibonacci
     Oscar Andrés Valencia Magaña
     15/09/2022
 */
@@ -13,18 +13,18 @@ primeros 100 valores de la serie.
 */
 #include<stdio.h>    
 
-int main()    
-{    
- int n1=0,n2=1,n3,i,number=10;    
+int main(){    
+ int n1=0,n2=1,i,number=100;    
+ long int n3;
  //printf("Enter the number of elements:");    
  //scanf("%d",&number);    
- printf("\n %d\t %d\t",n1,n2);//printing 0 and 1    
- for(i=2;i<number;++i)//loop starts from 2 because 0 and 1 are already printed    
- {    
-  n3=n1+n2;    
-  printf(" %d\t",n3);    
-  n1=n2;    
-  n2=n3;    
- }  
+ printf("Programa 9: serie de Fibonacci\n");
+ printf("\n n_1=%d\t n_2=%d\t",n1,n2);
+ 	for(i=2;i<=number;++i){  
+  		n3=n1+n2;    
+  		printf(" n_%d=%d\t",i+1,n3);    
+  		n1=n2;    
+  		n2=n3;    
+ 	}  
   return 0;  
  }   
