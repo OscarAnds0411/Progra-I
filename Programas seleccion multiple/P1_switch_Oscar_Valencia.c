@@ -36,22 +36,38 @@ int main(){
     case 3:
         printf("Ingrese el numero del cual desea calcular la tangente:\n");
         scanf("%f", &num1);
-        printf("El resultado de la tangente de %.3f es: %.3f\n", num1,tan(num1));
+        if (cos(num1)==0){
+            printf("ERROR\nno existe la tangente de %.3f\n", num1);
+        }else {
+            printf("El resultado de la tangente de %.3f es: %.3f\n", num1,tan(num1));
+        }
     break;
     case 4:
         printf("Ingrese el numero del cual desea calcular la raiz cuadrada:\n");
         scanf("%f", &num1);
-        printf("El resultado de la raiz cuadrada de %.3f es: %.3f\n", num1,sqrt(num1));
+        if (num1<0){
+            printf("ERROR\nno hay raiz cuadrada de numeros negativos en los reales\n");
+        }else {
+            printf("El resultado de la raiz cuadrada de %.3f es: %.3f\n", num1,sqrt(num1));
+        }
     break;
     case 5:
         printf("Ingrese el numero del cual desea calcular el logaritmo:\n");
         scanf("%f", &num1);
-        printf("El resultado del logaritmo de %.3f es: %.3f\n", num1,log(num1));
+        if (num1>0){
+            printf("El resultado del logaritmo de %.3f es: %.3f\n", num1,log(num1));
+        } else {     
+            printf("ERROR\nla funcion logaritmo no esta definida para el intervalo (-oo,0]\n");
+        }
     break;
     case 6:
         printf("Ingrese el numero del cual desea calcular el logaritmo base 10:\n");
         scanf("%f", &num1);
-        printf("El resultado del logaritmo base 10 de %.3f es: %.3f\n", num1,log10(num1));
+        if (num1>0){
+            printf("El resultado del logaritmo base 10 de %.3f es: %.3f\n", num1,log10(num1));
+        } else {     
+            printf("ERROR\nla funcion logaritmo no esta definida para el intervalo (-oo,0]\n");
+        }
     break;
     case 7:
         printf("Ingrese el numero el cual sera la potencia:\n");
