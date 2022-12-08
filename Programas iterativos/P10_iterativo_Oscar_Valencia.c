@@ -1,6 +1,6 @@
 /*
         Programación I
-    Programa 1 numeros pares
+    Programa 10 tiempo vivido
     Oscar Andrés Valencia Magaña
     15/09/2022
 */
@@ -15,14 +15,20 @@ ingresados correspondan al número de días, del mes y de los dos
 fecha. De lo contrario, mostrará error. 
 */
 #include <stdio.h>
+#include <stdlib.h>
 #include<conio.h>  
+#include<time.h>  
 
 int main(){
-    int i;
-   for (i=0; 2*i+1<=10000; i++){
-        printf("%d\t", 2*i+1);
-        if (i != 0 && i%100 == 0){
-            printf("\n%d numeros impares\n", i);
-        }
-   }
+    int a[100],i;
+    int arr_len = *(&a + 1) - a; // using pointer arithmetic
+   printf("The length of the int array is: %d\n", arr_len);
+        printf("\n%d\t\n",sizeof(a)/sizeof(a[0]));
+    time_t tiempo = time(0);
+        struct tm *tlocal = localtime(&tiempo);
+        char output[128];
+        strftime(output,128,"%d %m %y",tlocal);
+        printf("%s\n",output);
+        printf("%s\n",output[0]+output[1]);
+
 }
