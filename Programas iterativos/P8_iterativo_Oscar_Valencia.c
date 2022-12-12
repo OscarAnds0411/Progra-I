@@ -32,7 +32,6 @@ determinante 2x2
 
 #define scn scanf
 #define prnt printf
-#
 #define Det2x2(a,b,c,d) ((a*d)-(c*b)) 
 #define Det3x3(a,b,c,d,e,f,g,h,i) ((a*e*i)+(b*g*f)+(c*d*h)-((a*h*f)+(b*d*i)+(c*g*e)))
 
