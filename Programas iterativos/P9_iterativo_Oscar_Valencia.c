@@ -12,6 +12,7 @@ seleccionar que también se muestre el valor “n-ésimo” entre los
 primeros 100 valores de la serie. 
 */
 #include<stdio.h>    
+#include<stdlib.h>    
 
 int main(){    
  int n1,n2,i,number, opc=0;    
