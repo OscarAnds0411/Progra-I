@@ -13,12 +13,13 @@ deberá refrescar la pantalla y regresar al menú. Una de las opciones de
 dicho menú será terminar el programa.
 */
 #include <stdio.h>
+#include <stdlib.h>
 #include<conio.h>  
 #include<math.h>  
 #include<stdbool.h> 
 
 int main(){
-    int opc=0;
+    int opc;
     float num1;
     while (opc != 7){
        num1 = 0;    

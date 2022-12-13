@@ -12,6 +12,7 @@ terminar el cálculo, debe preguntar si requiere
 realizar otro cálculo o terminar el programa
 */
 #include <stdio.h>
+#include <stdlib.h>
 #include<conio.h>  
 
 int main(){

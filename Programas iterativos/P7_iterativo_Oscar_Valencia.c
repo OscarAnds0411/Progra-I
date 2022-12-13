@@ -14,13 +14,11 @@ Ejemplo: 234 tiene 3 dígitos
 #include<conio.h> 
 
 int main(){
-    int num;
-    char dig[10];
+    char dig[20];
 
     printf("Programa 7: Cantidad de digitos que componen a un numero\n");
     printf("Favor de ingresar un numero de entre 1 a 10 digitos\n");
-    scanf("%d", &num);
-    sprintf(dig, "%d", num);
+    scanf(" %s", &dig);
     if(strlen(dig)>=1 && strlen(dig)<=10){
         printf("El numero tiene %d digitos\n", strlen(dig));
     }else{
